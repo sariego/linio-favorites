@@ -6,5 +6,5 @@ enum class Badges {
     REFURBISHED,
     NEW,
     IMPORTED,
-    FREE,
+    FREE_SHIPPING,
 }
