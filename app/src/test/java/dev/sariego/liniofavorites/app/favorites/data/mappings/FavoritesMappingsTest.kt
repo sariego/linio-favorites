@@ -31,14 +31,14 @@ class FavoritesMappingsTest {
 
         (collections zip apiData).forEach { (actual, expected) ->
             assertThat(actual.itemCount).isEqualTo(expected.products.size)
-            assertThat(actual.snapshots).isEqualTo(expected.products.map(ProductModel::image))
+            assertThat(actual.snapshots).isEqualTo(expected.products.values.map(ProductModel::image))
         }
     }
 
     @Test
     fun `asProducts map direct values correctly`() {
         val apiData = FavoritesFactory.makeFavoritesApiData()
-        val apiProducts = apiData.flatMap(CollectionModel::products)
+        val apiProducts = apiData.flatMap { it.products.values }
         val products = with(mappings) { apiData.asProducts() }
 
         (products zip apiProducts).forEach { (actual, expected) ->

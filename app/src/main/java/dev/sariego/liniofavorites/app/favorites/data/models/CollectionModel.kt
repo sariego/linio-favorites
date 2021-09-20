@@ -6,5 +6,5 @@ import com.squareup.moshi.JsonClass
 data class CollectionModel(
     val id: Long,
     val name: String,
-    val products: List<ProductModel>
+    val products: Map<String, ProductModel>
 )

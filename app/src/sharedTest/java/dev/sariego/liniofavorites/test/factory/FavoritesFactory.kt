@@ -31,12 +31,17 @@ object FavoritesFactory {
         badges = emptyList()
     )
 
-    fun makeFavoritesApiData(count: Int = 5) = List(count) { i ->
+    fun makeFavoritesApiData(count: Int = 5) = List(count) {
         val productsInCollection = faker.random.nextInt(100)
         CollectionModel(
             id = faker.random.nextLong(),
             name = faker.harryPotter.houses(),
-            products = List(productsInCollection) { makeProductModel() }
+            products = mapOf(
+                // spread love <3
+                *Array(productsInCollection) {
+                    faker.random.nextUUID() to makeProductModel()
+                }
+            )
         )
     }
 

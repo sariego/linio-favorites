@@ -14,12 +14,12 @@ class FavoritesMappings @Inject constructor() {
             id = model.id,
             name = model.name,
             itemCount = model.products.size,
-            snapshots = model.products.map(ProductModel::image),
+            snapshots = model.products.values.map(ProductModel::image),
         )
     }
 
     fun List<CollectionModel>.asProducts(): List<Product> = flatMap { collection ->
-        collection.products.map { model -> model.asProduct() }
+        collection.products.values.map { model -> model.asProduct() }
     }
 
     fun ProductModel.asProduct() = Product(
