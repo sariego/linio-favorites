@@ -1,8 +1,11 @@
-package dev.sariego.liniofavorites.core.network.interceptor
+package dev.sariego.liniofavorites.core.network.interceptors
 
 import android.content.Context
 import okhttp3.Interceptor
+import okhttp3.Protocol
 import okhttp3.Response
+import okhttp3.ResponseBody
+import okhttp3.ResponseBody.Companion.toResponseBody
 import java.io.FileReader
 import javax.inject.Inject
 
@@ -13,14 +16,17 @@ class MockClient @Inject constructor(
     override fun intercept(chain: Interceptor.Chain): Response {
         val url = chain.request().url
         return when (url.encodedPath) {
-            "api/favorites" -> {
-                val asset = context.assets.openFd("favorites.json")
-                val response = FileReader(asset.fileDescriptor).use {
-                    it.readText()
-                }
+            "/api/favorites" -> {
+                val response = context.assets
+                    .open("favorites.json")
+                    .bufferedReader()
+                    .use { it.readText() }
                 Response.Builder()
+                    .request(chain.request())
+                    .protocol(Protocol.HTTP_1_1)
                     .code(200)
-                    .message(response)
+                    .message("OK")
+                    .body(response.toResponseBody())
                     .addHeader("content-type", "application/json")
                     .build();
 

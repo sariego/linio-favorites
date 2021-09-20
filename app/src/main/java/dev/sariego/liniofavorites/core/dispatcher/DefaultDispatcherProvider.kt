@@ -1,3 +1,5 @@
 package dev.sariego.liniofavorites.core.dispatcher
 
-class DefaultDispatcherProvider : DispatcherProvider
+import javax.inject.Inject
+
+class DefaultDispatcherProvider @Inject constructor() : DispatcherProvider

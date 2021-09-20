@@ -14,7 +14,7 @@ class DataModule {
 
     @Provides
     @ServerUrl
-    fun provideServerUrl() = "https://www.example.api/"
+    fun provideServerUrl(): String = "https://www.example.com/"
 
     @Provides
     fun provideNetworkService(

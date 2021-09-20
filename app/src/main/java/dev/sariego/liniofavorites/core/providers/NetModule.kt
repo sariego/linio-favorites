@@ -5,18 +5,18 @@ import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityRetainedComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
-import dev.sariego.liniofavorites.core.network.interceptor.MockClient
+import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dev.sariego.liniofavorites.core.network.interceptors.MockClient
 import dev.sariego.liniofavorites.core.providers.qualifier.ServerUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ActivityRetainedComponent::class)
 class NetModule {
 
     @Provides
@@ -31,12 +31,12 @@ class NetModule {
         .build()
 
     @Provides
-    @Singleton
+    @ActivityRetainedScoped
     fun provideMoshi(): Moshi = Moshi.Builder()
         .build()
 
     @Provides
-    @Singleton
+    @ActivityRetainedScoped
     fun provideOkHttpClient(
         @ApplicationContext context: Context,
     ): OkHttpClient {
