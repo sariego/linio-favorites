@@ -1,4 +1,4 @@
-package dev.sariego.liniofavorites.domain.entities
+package dev.sariego.liniofavorites.app.favorites.domain.entities
 
 data class Collection(
     val id: Long,

@@ -1,10 +1,10 @@
 package dev.sariego.liniofavorites.test.factory
 
-import dev.sariego.liniofavorites.data.mappings.ApiValues
-import dev.sariego.liniofavorites.data.models.CollectionModel
-import dev.sariego.liniofavorites.data.models.ProductModel
-import dev.sariego.liniofavorites.domain.entities.Collection
-import dev.sariego.liniofavorites.domain.entities.Product
+import dev.sariego.liniofavorites.app.favorites.data.mappings.ApiValues
+import dev.sariego.liniofavorites.app.favorites.data.models.CollectionModel
+import dev.sariego.liniofavorites.app.favorites.data.models.ProductModel
+import dev.sariego.liniofavorites.app.favorites.domain.entities.Collection
+import dev.sariego.liniofavorites.app.favorites.domain.entities.Product
 import io.github.serpro69.kfaker.Faker
 
 object FavoritesFactory {

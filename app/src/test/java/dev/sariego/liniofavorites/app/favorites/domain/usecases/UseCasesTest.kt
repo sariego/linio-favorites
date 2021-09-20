@@ -1,7 +1,7 @@
-package dev.sariego.liniofavorites.domain.usecases
+package dev.sariego.liniofavorites.app.favorites.domain.usecases
 
 import androidx.test.filters.SmallTest
-import dev.sariego.liniofavorites.domain.repositories.FavoritesRepository
+import dev.sariego.liniofavorites.app.favorites.domain.repositories.FavoritesRepository
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi

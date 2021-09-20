@@ -1,4 +1,4 @@
-package dev.sariego.liniofavorites.data.models
+package dev.sariego.liniofavorites.app.favorites.data.models
 
 import com.squareup.moshi.JsonClass
 

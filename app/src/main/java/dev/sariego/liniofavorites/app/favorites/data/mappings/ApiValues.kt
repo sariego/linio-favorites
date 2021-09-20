@@ -1,4 +1,4 @@
-package dev.sariego.liniofavorites.data.mappings
+package dev.sariego.liniofavorites.app.favorites.data.mappings
 
 object ApiValues {
     const val LINIO_PLUS_LEVEL_1 = 1

@@ -1,4 +1,4 @@
-package dev.sariego.liniofavorites.domain.entities
+package dev.sariego.liniofavorites.app.favorites.domain.entities
 
 enum class Badges {
     LINIO_PLUS,

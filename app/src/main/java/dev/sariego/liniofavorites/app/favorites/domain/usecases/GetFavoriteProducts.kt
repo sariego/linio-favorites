@@ -1,6 +1,6 @@
-package dev.sariego.liniofavorites.domain.usecases
+package dev.sariego.liniofavorites.app.favorites.domain.usecases
 
-import dev.sariego.liniofavorites.domain.repositories.FavoritesRepository
+import dev.sariego.liniofavorites.app.favorites.domain.repositories.FavoritesRepository
 import javax.inject.Inject
 
 class GetFavoriteProducts @Inject constructor(
