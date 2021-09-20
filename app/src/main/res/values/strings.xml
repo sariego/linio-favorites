@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LinioFavorites</string>
+    <string name="my_favorites_title">Favoritos</string>
     <string name="my_favorites_header">Todos mis favoritos</string>
 </resources>
