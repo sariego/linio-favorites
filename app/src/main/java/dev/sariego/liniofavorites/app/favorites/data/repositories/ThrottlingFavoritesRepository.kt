@@ -5,7 +5,6 @@ import dev.sariego.liniofavorites.app.favorites.data.sources.LinioFavoritesServi
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Collection
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Product
 import dev.sariego.liniofavorites.app.favorites.domain.repositories.FavoritesRepository
-import dev.sariego.liniofavorites.core.dispatcher.DefaultDispatcherProvider
 import dev.sariego.liniofavorites.core.dispatcher.DispatcherProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -19,7 +18,7 @@ import javax.inject.Inject
 class ThrottlingFavoritesRepository @Inject constructor(
     private val service: LinioFavoritesService,
     private val mappings: FavoritesMappings,
-    dispatchers: DispatcherProvider = DefaultDispatcherProvider(),
+    dispatchers: DispatcherProvider,
 ) : FavoritesRepository {
 
     private val serviceFlow = flow {
