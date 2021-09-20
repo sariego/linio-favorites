@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.theme
+package dev.sariego.liniofavorites.core.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

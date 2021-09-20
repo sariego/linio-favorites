@@ -2,4 +2,11 @@
     <string name="app_name">LinioFavorites</string>
     <string name="my_favorites_title">Favoritos</string>
     <string name="my_favorites_header">Todos mis favoritos</string>
+
+    <string name="cd_badge_linio_plus">Linio Plus</string>
+    <string name="cd_badge_linio_plus_48">Linio Plus 48</string>
+    <string name="cd_badge_refurbished">Restaurado</string>
+    <string name="cd_badge_new">Nuevo</string>
+    <string name="cd_badge_imported">Importado</string>
+    <string name="cd_badge_free_shipping">Envío gratis</string>
 </resources>

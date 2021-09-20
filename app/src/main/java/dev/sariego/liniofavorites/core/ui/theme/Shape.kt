@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.theme
+package dev.sariego.liniofavorites.core.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
