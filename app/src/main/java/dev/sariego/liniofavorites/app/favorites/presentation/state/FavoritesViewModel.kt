@@ -14,7 +14,6 @@ import javax.inject.Inject
 class FavoritesViewModel @Inject constructor(
     private val getFavoriteCollections: GetFavoriteCollections,
     private val getFavoriteProducts: GetFavoriteProducts,
-    private val dispatchers: DispatcherProvider,
 ) : ViewModel() {
 
     val states = flow {
