@@ -6,7 +6,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.sariego.liniofavorites.app.favorites.domain.usecases.GetFavoriteCollections
 import dev.sariego.liniofavorites.app.favorites.domain.usecases.GetFavoriteProducts
 import dev.sariego.liniofavorites.app.favorites.presentation.state.FavoritesScreenState.*
-import dev.sariego.liniofavorites.core.dispatcher.DispatcherProvider
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
@@ -16,14 +15,16 @@ class FavoritesViewModel @Inject constructor(
     private val getFavoriteProducts: GetFavoriteProducts,
 ) : ViewModel() {
 
-    val states = flow {
+    val states: StateFlow<FavoritesScreenState> = flow {
         emit(getFavoriteCollections() to getFavoriteProducts())
     }
-        .map { (collections, products) -> DisplayingFavorites(collections, products) }
-        .catch { throwable -> DisplayingError(throwable) }
+        .map { (collections, products) ->
+            DisplayingFavorites(collections, products) as FavoritesScreenState
+        }
+        .catch { cause -> emit(DisplayingError(cause)) }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.Lazily,
-            initialValue = Loading,
+            initialValue = Loading
         )
 }

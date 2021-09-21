@@ -36,7 +36,7 @@ fun FavoritesScreen(
             CircularProgressIndicator()
         }
         is DisplayingError -> {
-            val message = (state.value as DisplayingError).throwable.message
+            val message = (state.value as DisplayingError).cause.message
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,

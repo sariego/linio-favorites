@@ -7,7 +7,7 @@ sealed class FavoritesScreenState {
 
     object Loading : FavoritesScreenState()
 
-    data class DisplayingError(val throwable: Throwable) : FavoritesScreenState()
+    data class DisplayingError(val cause: Throwable) : FavoritesScreenState()
 
     data class DisplayingFavorites(
         val collections: List<Collection>,
