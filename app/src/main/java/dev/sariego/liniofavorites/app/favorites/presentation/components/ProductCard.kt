@@ -19,7 +19,7 @@ import dev.sariego.liniofavorites.app.favorites.domain.entities.Product
 
 @ExperimentalCoilApi
 @Composable
-fun ProductCard(data: Product, modifier: Modifier) {
+fun ProductCard(data: Product, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .aspectRatio(1.0F)

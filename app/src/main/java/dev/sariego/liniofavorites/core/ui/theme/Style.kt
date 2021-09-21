@@ -18,3 +18,17 @@ val Header = TextStyle(
     fontWeight = FontWeight.Bold,
     fontSize = 16.sp,
 )
+
+val Body = TextStyle(
+    color = FavoritesContent,
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Normal,
+    fontSize = 14.sp,
+)
+
+val Caption = TextStyle(
+    color = FavoritesSecondary,
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Normal,
+    fontSize = 14.sp,
+)

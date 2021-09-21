@@ -9,3 +9,4 @@ val Teal200 = Color(0xFF03DAC5)
 
 val FavoritesBackground = Color(0xFFF8F5F5)
 val FavoritesContent = Color(0xFF212121)
+val FavoritesSecondary = Color(0xFFBDBDBD)
