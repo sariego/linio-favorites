@@ -1,6 +1,7 @@
 package dev.sariego.liniofavorites.app.favorites.presentation.screens
 
 import android.content.res.Configuration
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -53,12 +54,7 @@ fun FavoritesScreen(
 
 @Composable
 private fun FavoritesInnerScreen(data: DisplayingFavorites) {
-    val configuration = LocalConfiguration.current
-    val columns = when (configuration.orientation) {
-        Configuration.ORIENTATION_LANDSCAPE -> COLUMNS_IN_LANDSCAPE
-        Configuration.ORIENTATION_PORTRAIT -> COLUMNS_IN_PORTRAIT
-        else -> COLUMNS_IN_PORTRAIT
-    }
+    val columns = NumOfColumnsInFavoritesScreen()
     LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         items(data.collections.chunked(columns)) { collections ->
             Row(
@@ -100,6 +96,17 @@ private fun RowScope.FillEmptyColumns(items: List<Any>, columns: Int) {
     val diff = columns - items.size
     if (diff > 0) Spacer(modifier = Modifier.weight(diff.toFloat()))
 
+}
+
+@VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+@Composable
+fun NumOfColumnsInFavoritesScreen(): Int {
+    val configuration = LocalConfiguration.current
+    return when (configuration.orientation) {
+        Configuration.ORIENTATION_LANDSCAPE -> COLUMNS_IN_LANDSCAPE
+        Configuration.ORIENTATION_PORTRAIT -> COLUMNS_IN_PORTRAIT
+        else -> COLUMNS_IN_PORTRAIT
+    }
 }
 
 private const val COLUMNS_IN_PORTRAIT = 2
