@@ -9,10 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import coil.transform.RoundedCornersTransformation
 import dev.sariego.liniofavorites.R
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Badges.*
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Product
@@ -23,7 +25,7 @@ fun ProductCard(data: Product, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .aspectRatio(1.0F)
-            .clip(RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(4.dp))
             .clickable { },
     ) {
         Image(
@@ -38,36 +40,29 @@ fun ProductCard(data: Product, modifier: Modifier = Modifier) {
         ) {
             data.badges.forEach { badge ->
                 when (badge) {
-                    LINIO_PLUS -> Image(
-                        painter = rememberImagePainter(R.drawable.nd_ic_plus_30),
-                        contentDescription = stringResource(R.string.cd_badge_linio_plus),
-                        modifier = Modifier.size(30.dp)
-
+                    LINIO_PLUS -> ProductIcon(
+                        resource = R.drawable.nd_ic_plus_30,
+                        contentDescription = stringResource(R.string.cd_badge_linio_plus)
                     )
-                    LINIO_PLUS_48 -> Image(
-                        painter = rememberImagePainter(R.drawable.nd_ic_plus_48_30),
-                        contentDescription = stringResource(R.string.cd_badge_linio_plus_48),
-                        modifier = Modifier.size(30.dp)
+                    LINIO_PLUS_48 -> ProductIcon(
+                        resource = R.drawable.nd_ic_plus_48_30,
+                        contentDescription = stringResource(R.string.cd_badge_linio_plus_48)
                     )
-                    REFURBISHED -> Image(
-                        painter = rememberImagePainter(R.drawable.nd_ic_refurbished_30),
-                        contentDescription = stringResource(R.string.cd_badge_refurbished),
-                        modifier = Modifier.size(30.dp)
+                    REFURBISHED -> ProductIcon(
+                        resource = R.drawable.nd_ic_refurbished_30,
+                        contentDescription = stringResource(R.string.cd_badge_refurbished)
                     )
-                    NEW -> Image(
-                        painter = rememberImagePainter(R.drawable.nd_ic_new_30),
-                        contentDescription = stringResource(R.string.cd_badge_new),
-                        modifier = Modifier.size(30.dp)
+                    NEW -> ProductIcon(
+                        resource = R.drawable.nd_ic_new_30,
+                        contentDescription = stringResource(R.string.cd_badge_new)
                     )
-                    IMPORTED -> Image(
-                        painter = rememberImagePainter(R.drawable.nd_ic_international_30),
-                        contentDescription = stringResource(R.string.cd_badge_imported),
-                        modifier = Modifier.size(30.dp)
+                    IMPORTED -> ProductIcon(
+                        resource = R.drawable.nd_ic_international_30,
+                        contentDescription = stringResource(R.string.cd_badge_imported)
                     )
-                    FREE_SHIPPING -> Image(
-                        painter = rememberImagePainter(R.drawable.nd_ic_free_shipping_30),
-                        contentDescription = stringResource(R.string.cd_badge_free_shipping),
-                        modifier = Modifier.size(30.dp)
+                    FREE_SHIPPING -> ProductIcon(
+                        resource = R.drawable.nd_ic_free_shipping_30,
+                        contentDescription = stringResource(R.string.cd_badge_free_shipping)
                     )
                 }
             }
@@ -82,4 +77,15 @@ fun ProductCard(data: Product, modifier: Modifier = Modifier) {
                 .align(Alignment.TopEnd)
         )
     }
+}
+
+@ExperimentalCoilApi
+@Composable
+private fun ProductIcon(resource: Int, contentDescription: String) {
+    Image(
+        painter = rememberImagePainter(resource),
+        contentDescription = contentDescription,
+        modifier = Modifier.size(30.dp)
+
+    )
 }
