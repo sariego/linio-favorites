@@ -36,7 +36,7 @@ class FavoritesScreenTest {
             collections = mockCollections,
             products = emptyList()
         )
-        every { viewModel.states } returns MutableStateFlow(mockState)
+        every { viewModel.state } returns MutableStateFlow(mockState)
 
         var numOfColumns = 0 // varies by target device configuration
         composeTestRule.setContent {
@@ -66,7 +66,7 @@ class FavoritesScreenTest {
             collections = emptyList(),
             products = mockProducts
         )
-        every { viewModel.states } returns MutableStateFlow(mockState)
+        every { viewModel.state } returns MutableStateFlow(mockState)
 
         var numOfColumns = 0 // varies by target device configuration
         composeTestRule.setContent {
@@ -92,7 +92,7 @@ class FavoritesScreenTest {
             collections = emptyList(),
             products = mockProducts
         )
-        every { viewModel.states } returns MutableStateFlow(mockState)
+        every { viewModel.state } returns MutableStateFlow(mockState)
 
         composeTestRule.setContent {
             FavoritesAppTheme {

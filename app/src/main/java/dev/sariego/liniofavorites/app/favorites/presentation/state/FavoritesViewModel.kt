@@ -15,7 +15,7 @@ class FavoritesViewModel @Inject constructor(
     private val getFavoriteProducts: GetFavoriteProducts,
 ) : ViewModel() {
 
-    val states: StateFlow<FavoritesScreenState> = flow {
+    val state: StateFlow<FavoritesScreenState> = flow {
         emit(getFavoriteCollections() to getFavoriteProducts())
     }
         .map { (collections, products) ->

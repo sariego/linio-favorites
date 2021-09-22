@@ -33,7 +33,7 @@ class FavoritesViewModelTest {
     }
 
     @Test
-    fun `given mocked data when data loads states should reflect Loading then Displaying`() =
+    fun `given mocked data when data loads state should reflect Loading then Displaying`() =
         testRule.runBlockingTest {
             val mockedCollections = List(3) { FavoritesFactory.makeCollection() }
             val mockedProducts = List(3) { FavoritesFactory.makeProduct() }
@@ -52,14 +52,14 @@ class FavoritesViewModelTest {
                 mockedProducts
             }
 
-            val actualStates = viewModel.states.take(2).toList()
+            val actualStates = viewModel.state.take(2).toList()
             assertThat(actualStates).isEqualTo(expectedStates)
 
         }
 
 
     @Test
-    fun `given mocked data when data is instant states should just be Displaying`() =
+    fun `given mocked data when data is instant state should just be Displaying`() =
         testRule.runBlockingTest {
             // this case happens for example on configuration changes (when the phone rotates)
 
@@ -70,12 +70,12 @@ class FavoritesViewModelTest {
             coEvery { getCollections() } returns mockedCollections
             coEvery { getProducts() } returns mockedProducts
 
-            val actual = viewModel.states.first()
+            val actual = viewModel.state.first()
             assertThat(actual).isEqualTo(expected)
         }
 
     @Test
-    fun `when Collections load fails states should reflect Loading then Error`() =
+    fun `when Collections load fails state should reflect Loading then Error`() =
         testRule.runBlockingTest {
             val error = Throwable()
             val expectedStates = listOf(
@@ -88,12 +88,12 @@ class FavoritesViewModelTest {
                 throw error
             }
 
-            val actualStates = viewModel.states.take(2).toList()
+            val actualStates = viewModel.state.take(2).toList()
             assertThat(actualStates).isEqualTo(expectedStates)
         }
 
     @Test
-    fun `when Products load fails states should reflect Loading then Error`() =
+    fun `when Products load fails state should reflect Loading then Error`() =
         testRule.runBlockingTest {
             val error = Throwable()
             val expectedStates = listOf(
@@ -106,7 +106,7 @@ class FavoritesViewModelTest {
                 throw error
             }
 
-            val actualStates = viewModel.states.take(2).toList()
+            val actualStates = viewModel.state.take(2).toList()
             assertThat(actualStates).isEqualTo(expectedStates)
         }
 

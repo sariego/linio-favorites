@@ -28,7 +28,7 @@ import dev.sariego.liniofavorites.core.ui.theme.Header
 fun FavoritesScreen(
     favoritesViewModel: FavoritesViewModel = viewModel()
 ) {
-    val state = favoritesViewModel.states.collectAsState()
+    val state = favoritesViewModel.state.collectAsState()
     when (state.value) {
         Loading -> Box(
             modifier = Modifier.fillMaxSize(),
