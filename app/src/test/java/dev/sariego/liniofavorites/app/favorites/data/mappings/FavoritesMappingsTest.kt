@@ -2,7 +2,6 @@ package dev.sariego.liniofavorites.app.favorites.data.mappings
 
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
-import dev.sariego.liniofavorites.app.favorites.data.models.CollectionModel
 import dev.sariego.liniofavorites.app.favorites.data.models.ProductModel
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Badges.*
 import dev.sariego.liniofavorites.test.factory.FavoritesFactory

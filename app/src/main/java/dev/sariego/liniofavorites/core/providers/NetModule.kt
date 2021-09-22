@@ -40,7 +40,7 @@ class NetModule {
     fun provideOkHttpClient(
         @ApplicationContext context: Context,
     ): OkHttpClient {
-        val logging =  HttpLoggingInterceptor()
+        val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
 
         val mockClient = MockClient(context)

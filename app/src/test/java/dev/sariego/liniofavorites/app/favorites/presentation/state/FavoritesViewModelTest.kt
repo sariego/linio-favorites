@@ -54,9 +54,7 @@ class FavoritesViewModelTest {
 
             val actualStates = viewModel.state.take(2).toList()
             assertThat(actualStates).isEqualTo(expectedStates)
-
         }
-
 
     @Test
     fun `given mocked data when data is instant state should just be Displaying`() =

@@ -77,7 +77,6 @@ private fun FavoritesInnerScreen(data: DisplayingFavorites) {
             ) {
                 Text(header, style = Header)
             }
-
         }
         items(data.products.chunked(columns)) { products ->
             Row(
@@ -95,7 +94,6 @@ private fun FavoritesInnerScreen(data: DisplayingFavorites) {
 private fun RowScope.FillEmptyColumns(items: List<Any>, columns: Int) {
     val diff = columns - items.size
     if (diff > 0) Spacer(modifier = Modifier.weight(diff.toFloat()))
-
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)

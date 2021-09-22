@@ -4,9 +4,7 @@ import android.content.Context
 import okhttp3.Interceptor
 import okhttp3.Protocol
 import okhttp3.Response
-import okhttp3.ResponseBody
 import okhttp3.ResponseBody.Companion.toResponseBody
-import java.io.FileReader
 import javax.inject.Inject
 
 class MockClient @Inject constructor(
@@ -28,8 +26,7 @@ class MockClient @Inject constructor(
                     .message("OK")
                     .body(response.toResponseBody())
                     .addHeader("content-type", "application/json")
-                    .build();
-
+                    .build()
             }
             else -> chain.proceed(chain.request())
         }

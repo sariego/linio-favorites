@@ -41,11 +41,11 @@ class MainActivity : ComponentActivity() {
                                 }
                             },
                             actions = {
-                                      Icon(
-                                          painter = rememberImagePainter(R.drawable.nd_ic_add_collection_32),
-                                          contentDescription = null,
-                                          modifier = Modifier.clickable {  }
-                                      ) // this action does nothing
+                                Icon(
+                                    painter = rememberImagePainter(R.drawable.nd_ic_add_collection_32),
+                                    contentDescription = null,
+                                    modifier = Modifier.clickable { }
+                                ) // this action does nothing
                             },
                             backgroundColor = FavoritesBackground
                         )

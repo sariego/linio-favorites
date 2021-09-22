@@ -8,15 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-        primary = FavoritesContent,
-        primaryVariant = Color.Black,
-        secondary = Teal200
+    primary = FavoritesContent,
+    primaryVariant = Color.Black,
+    secondary = Teal200
 )
 
 private val LightColorPalette = lightColors(
-        primary = FavoritesContent,
-        primaryVariant = Color.Black,
-        secondary = Teal200
+    primary = FavoritesContent,
+    primaryVariant = Color.Black,
+    secondary = Teal200
 
         /* Other default colors to override
     background = Color.White,
@@ -37,9 +37,9 @@ fun FavoritesAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Comp
     }
 
     MaterialTheme(
-            colors = colors,
-            typography = Typography,
-            shapes = Shapes,
-            content = content
+        colors = colors,
+        typography = Typography,
+        shapes = Shapes,
+        content = content
     )
 }

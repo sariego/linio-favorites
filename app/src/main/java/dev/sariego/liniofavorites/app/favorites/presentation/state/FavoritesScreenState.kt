@@ -12,5 +12,5 @@ sealed class FavoritesScreenState {
     data class DisplayingFavorites(
         val collections: List<Collection>,
         val products: List<Product>,
-    ): FavoritesScreenState()
+    ) : FavoritesScreenState()
 }

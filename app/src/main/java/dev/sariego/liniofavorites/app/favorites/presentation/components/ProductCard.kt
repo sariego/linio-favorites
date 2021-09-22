@@ -9,12 +9,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
-import coil.transform.RoundedCornersTransformation
 import dev.sariego.liniofavorites.R
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Badges.*
 import dev.sariego.liniofavorites.app.favorites.domain.entities.Product
