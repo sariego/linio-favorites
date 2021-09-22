@@ -47,7 +47,7 @@ The .json file must be loaded at runtime (use of Retrofit library is expected).
   without overusing the data source (server api)
 - network implementation using Retrofit, Okhttp and Moshi for deserialization
 - mock data served using an interceptor in OkHttp client
-- dependency inyection provided by Dagger Hilt
+- dependency injection provided by Dagger Hilt
 - clean architecture implemented using kotlin coroutines and Flow
 - Unit tests in all layers
 - mocking by Mockk
@@ -56,15 +56,16 @@ The .json file must be loaded at runtime (use of Retrofit library is expected).
 - image loading with Coil
 - UI test using compose-test
 
-- Jetpack Compose is still pretty new, i had several issues with dependencies and conflicting versions, 
-  also current grid support doesn't allow to specify column spans for items so i had to revert to a custom 
-  lazy column implementation in the end.
-- the items in the grid measure themselves horizontally to represent 2 columns (3 for landscape) and then vertically 
-  for a 1:1 aspect ratio, with proper padding and separators
-- after the rough starting configuration issues Compose was amazing, it works very very well with Clean Architecture.
-- added handling of border cases where odd number of items caused wrong sizes of product cards
-- other than that the app doesnt do anything, there isn't any click listeners anywhere so it just shows the data from 
-  the mock json file
+- Jetpack Compose is still pretty new, i had several issues with dependencies and conflicting
+  versions, also current grid support doesn't allow to specify column spans for items so i had
+  to revert to a custom lazy column implementation in the end.
+- The items in the grid measure themselves horizontally to represent 2 columns (3 for landscape)
+  and then vertically for a 1:1 aspect ratio, with proper padding and separators.
+- After the rough starting configuration issues Compose was amazing, it works very very well with
+  Clean Architecture.
+- Added handling of border cases where odd number of items caused wrong sizes of product cards.
+- Other than that the app doesn't do anything, there isn't any click listeners anywhere so it just
+  shows the data from the mock json file.
 ```
 
 ### screenshots
